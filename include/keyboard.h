@@ -1,7 +1,7 @@
 #ifndef keyboard_h
 #define keyboard_h
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

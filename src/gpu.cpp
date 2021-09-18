@@ -16,7 +16,7 @@ int InitGPU(){
         printf( "Window could not be created! SDL Error: %s\n", SDL_GetError() );
         return CODE_ERROR;
     }
-    
+
     //Create renderer for the window
     gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if(gRenderer == NULL){
@@ -24,12 +24,14 @@ int InitGPU(){
         return CODE_ERROR;
     }
     
+    
     //Create blank textures
     mTexture = SDL_CreateTexture( gRenderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, HIGH_SCREEN_WIDTH, HIGH_SCREEN_HEIGHT );
     if(mTexture == NULL){
         printf( "Unable to create blank texture! SDL Error: %s\n", SDL_GetError() );
         return CODE_ERROR;
     }
+    
     
     //Allocate memory for VRAM
     VRAM = (bool*) malloc(HIGH_SCREEN_WIDTH * HIGH_SCREEN_HEIGHT * sizeof(bool));
@@ -39,6 +41,7 @@ int InitGPU(){
         return CODE_ERROR;
     }
     
+
     //Clear VRAM
     memset(VRAM, 0, HIGH_SCREEN_WIDTH * HIGH_SCREEN_HEIGHT * sizeof(bool));
     
@@ -128,10 +131,10 @@ void SetWindowTitle(char* title){
 }
 
 void ResetGPU(){
-    SDL_SetRenderTarget(gRenderer, mTexture);
+    /*SDL_SetRenderTarget(gRenderer, mTexture);
     SDL_SetRenderDrawColor( gRenderer, 0x0, 0x0, 0x0, 0xFF );
     SDL_RenderClear(gRenderer);
-    SDL_RenderPresent( gRenderer );
+    SDL_RenderPresent( gRenderer );*/
     
     //Clear VRAM
     memset(VRAM, 0, HIGH_SCREEN_WIDTH * HIGH_SCREEN_HEIGHT * sizeof(bool));

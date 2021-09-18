@@ -3,7 +3,10 @@ This is a Chip8/Super chip emulator written in C.
 It supports all Chip8 and Super chip instructions.
 
 Currently only for macOS but it can be ported to other platforms easily as it uses SDL2.
-To compile download xcode command line tools, SDL2 dev libs then cd to source directory and run "make".
+To compile download xcode command line tools and SDL2 dev libs then cd to source directory and run "make".
+
+Installing SDL dev libs:
+https://lazyfoo.net/tutorials/SDL/01_hello_SDL/mac/index.php
 
 To run a game just drag and drop it on the main window and it will start automatically.
 
